@@ -1,8 +1,7 @@
 import React from "react"
 import { Outlet, NavLink } from "react-router-dom"
 
-export default function HostLayout(){
-
+export default function HostVansLayout(){
     const activeStyle = {
         fontWeight: "bold",
         textDecoration: "underline",
@@ -11,40 +10,33 @@ export default function HostLayout(){
 
     return (
         <>
+        <Outlet/>
         <header>
             <nav>
                 <NavLink 
-                    to="."
+                    to="details"
                     end
                     style={({isActive}) => isActive ? activeStyle : null }
                 >
-                Dashboard
+                Details
                 </NavLink>
 
                 <NavLink 
-                    to="income"
+                    to="pricing"
                     style={({isActive}) => isActive ? activeStyle : null }
                 >
-                Income
+                Pricing
                 </NavLink>
                 
                 <NavLink 
-                    to="vans"
+                    to="photos"
                     style={({isActive}) => isActive ? activeStyle : null }
                 >
-                Vans
-                </NavLink>
-
-                <NavLink 
-                    to="reviews"
-                    style={({isActive}) => isActive ? activeStyle : null }
-                >
-                Reviews
+                Photos
                 </NavLink>
 
             </nav>
         </header>
-        <Outlet/>
         </>
   )
 }
