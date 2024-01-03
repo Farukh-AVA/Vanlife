@@ -5,6 +5,7 @@ import Home from "./pages/Home"
 import About from "./pages/About"
 import Vans from "./pages/Vans/Vans"
 import VanDetail from "./pages/Vans/VanDetail"
+import Login from "./pages/Login"
 import Layout from "./components/Layout"
 import Header from './components/Header';
 import Dashboard from './pages/Host/Dashboard';
@@ -17,6 +18,7 @@ import HostVansInfo from './pages/Host/HostVanInfo';
 import HostVansPhotos from './pages/Host/HostVanPhotos';
 import HostVansPricing from './pages/Host/HostVanPricing';
 import HostVansLayout from './components/HostVansLayout';
+import NotFound from './pages/NotFound';
 
 export default function App() {
   return (
@@ -27,6 +29,10 @@ export default function App() {
             <Route path="about" element={<About />} />
             <Route path="vans" element={<Vans />} />
             <Route path="vans/:id" element={<VanDetail />} />
+            <Route
+            path="login"
+            element={<Login />}
+          />
 
             <Route path="host" element={<HostLayout />}>
               <Route index element={<Dashboard />} />
@@ -41,6 +47,7 @@ export default function App() {
               </Route>
               
             </Route>
+            <Route path="*" element={<NotFound />} />
           </Route>
       </Routes>
     </BrowserRouter>
