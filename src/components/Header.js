@@ -1,5 +1,6 @@
 import React from "react"
 import { Link, NavLink } from "react-router-dom"
+import { CiLogin } from "react-icons/ci";
 
 export default function Header(){
 
@@ -8,7 +9,9 @@ export default function Header(){
         textDecoration: "underline",
         color: "#161616"
     }
-
+    function fakeLogOut() {
+        localStorage.removeItem("loggedin")
+    }
     return (
         <header>
             <Link className="site-logo" to="/">#VanLife</Link>
@@ -34,11 +37,9 @@ export default function Header(){
                 Host
                 </NavLink>
                 <Link to="login" className="login-link">
-                    <img 
-                        src="../assets/images/avatar-icon.png" 
-                        className="login-icon"
-                    />
+                    {<CiLogin  size={25} />}
                 </Link>
+                <button onClick={fakeLogOut}>X</button>
             </nav>
         </header>
   )
