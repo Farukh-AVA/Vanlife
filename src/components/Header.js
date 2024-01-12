@@ -1,6 +1,6 @@
 import React from "react"
 import { Link, NavLink } from "react-router-dom"
-import { CiLogin } from "react-icons/ci";
+import { CiLogin, CiLogout } from "react-icons/ci";
 
 export default function Header(){
 
@@ -39,7 +39,10 @@ export default function Header(){
                 <Link to="login" className="login-link">
                     {<CiLogin  size={25} />}
                 </Link>
-                <button onClick={fakeLogOut}>X</button>
+                
+                <Link>
+                    {<CiLogout size={25} onClick={fakeLogOut}/>}
+                </Link>
             </nav>
         </header>
   )
